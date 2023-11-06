@@ -1,1 +1,3 @@
 Blog created and posted: https://itsabhijeet.hashnode.dev/shell-scripting-basics
+
+Blog created and posted: https://itsabhijeet.hashnode.dev/automating-your-tasks-with-cron-a-guide-to-scheduling-daily-backups-in-linux
