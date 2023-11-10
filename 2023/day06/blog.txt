@@ -1,0 +1,2 @@
+Wrote a blog : https://itsabhijeet.hashnode.dev/file-permissions-and-access-control-lists-in-linux
+answers are stored on day wise folder
