@@ -1,0 +1,67 @@
+Day-11 Tasks
+============
+
+Task-01:
+
+Create a new branch and make some changes to it.
+Run the command git branch <new branch name>. Replace <new branch name> with the name you want to give your new branch. This will create a new branch off of your current branch.
+
+Use git stash to save the changes without committing them.
+Run the command git stash. This will save your changes without committing them.
+You can then make any other changes you need to make or switch to a different branch to work on something else
+Switch to a different branch, make some changes and commit them.
+Run the command git branch to see a list of all the branches in your repository. Choose the branch you want to switch to and run the command git checkout <branch name>. This will switch you to the specified branch.
+
+Use git stash pop to bring the changes back and apply them on top of the new commits.
+Run the command git stash list to see a list of all stashes.
+Run the command git stash pop to apply the most recent stash on top of the new commits.
+Alternatively, if you have multiple stashes, you can specify the stash you want to apply using git stash apply <stash@{n}>, where n is the index of the stash you want to apply.
+After applying the stash, you can continue making changes to your files.
+
+=================================================================================================================================================================================
+
+Task-02:
+
+In version01.txt of development branch add below lines after “This is the bug fix in development branch” that you added in Day10 and reverted to this commit.
+Switch to the development branch using the command git checkout development.
+Open the version01.txt file in your favorite text editor.
+Add the lines you want to add after “This is the bug fix in development branch”.
+Save and close the file.
+Stage the changes using the command git add version01.txt.
+Commit the changes using the command git commit -m "Added lines after bug fix"
+Line2>> After bug fixing, this is the new feature with minor alteration” Commit this with message “ Added feature2.1 in development branch”
+Open the version01.txt file in your favorite text editor.
+Add the lines you want to add after “After bug fixing, this is the new feature with minor alteration” then Save and close file stage the changes and commit the changes with command git commit -m "Added feature 2.1 in development branch".
+
+Line3>> “This is the advancement of previous feature” Commit this with message “ Added feature2.2 in development branch”
+Open the version01.txt file in your favorite text editor.
+Add the lines you want to add after “This is the advancement of previous feature Commit this with message” then Save and close file stage the changes and commit the changes with command git commit -m "Added feature 2.2 in development branch".
+Line4>> “Feature 2 is completed and ready for release” Commit this with message “ Feature2 completed”
+Open the version01.txt file in your favorite text editor.
+Add the lines you want to add after “Feature 2 is completed and ready for release” then Save and close file stage the changes and commit the changes with command git commit -m " Feature 2 completed".
+All these commits messages should be reflected in Production branch too which will come out from Master branch
+Switch to the production branch using the command git checkout production.
+Use the command git rebase master to rebase the production branch onto the master branch. This will apply all the changes from the master branch onto the production branch.
+Use the command git rebase -i HEAD~<number of commits> to interactively rebase the production branch and squash the commits into a single commit with a descriptive commit message.
+Resolve any conflicts that arise during the rebase process.
+Push the changes to the remote repository using the command git push --force, as the rebase process changes the commit history and requires a force push.
+
+===================================================================================================================================================================================
+
+Task-03:
+
+In Production branch Cherry pick Commit “Added feature2.2 in development branch” and added below lines in it:
+Cherry-picking a commit in Git means selecting a specific commit from one branch and applying it to another branch. Here are the steps to cherry-pick a commit in the Production branch and make changes to it:
+
+Switch to the Production branch: git checkout Production
+Cherry-pick the commit “Added feature2.2 in development branch”: git cherry-pick <commit-hash>
+Replace <commit-hash> with the hash of the commit "Added feature2.2 in development branch".
+Open the version01.txt file: nano Devops/Git/version01.txt
+Add the following lines after the existing text:
+Line3>> This is the advancement of previous feature
+Line4>>Added few more changes to make it more optimized.
+6. Save and exit the file.
+
+7. Stage the changes: git add Devops/Git/version01.txt
+
+8. Commit the changes with the message “Cherry-picked and modified feature2.2 from development branch”: git commit -m "Cherry-picked and modified feature2.2 from development branch"
